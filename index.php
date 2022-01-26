@@ -23,11 +23,18 @@
             <td>
                 <?= $element[0]; ?>
             </td>
-            <td>
-                <?= $element[1]; ?>$
+            <td <?php if ($element[1] >= 12) {
+                echo 'style="color:green;"';
+            } else {
+                echo 'style="color:blue;"';
+            }
+                ?>
+            >
+                Prix: 
+                <?= $element[1] ?>$
             </td>
             <td>
-                <?= $element[2]; ?>
+                Description: <?= $element[2]; ?>
             </td>
         </tr>
         <?php
@@ -40,12 +47,6 @@
 
 
 
-<!-- 2. Tableaux imbriqués
-    Nous voulons maintenant un peu plus d'informations sur nos produits. Commençons par un prix et une description.
-    Complexifions les données et transformons nos données en tableaux :
-        Bonnet en laine : 10€
-        Bonnet en laine bio : 14€
-        Bonnet en laine et cachemire : 20€
-        Bonnet arc-en-ciel : 12€
-    Tous les produits vont également avoir la même description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.
-    Mettre à jour l'affichage en conséquence -->
+<!-- 3. Conditions
+On va faire ressortir visuellement les prix de nos produits, et encore plus ceux qui ne sont pas cher !
+    Si un prix est inférieur ou égal à 12€, afficher le prix en vert, sinon l'afficher en bleu. -->
