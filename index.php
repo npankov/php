@@ -30,11 +30,12 @@
                 Prix: 
                 <span <?php if ($element[1] >= 12) {
                 echo 'style="color:green;"';
-            } else {
+                } else {
                 echo 'style="color:blue;"';
-            }
+                }
                 ?>
-                ><?= $element[1] ?>$
+                >
+                <?= $element[1] ?>$
                 </span>
             </td>
             <td>
