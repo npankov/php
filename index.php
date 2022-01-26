@@ -9,24 +9,30 @@
 <body>
     <?php
         $myArray = [
-            'Bonnet en laine',
-            'Bonnet en laine bio',
-            'Bonnet en laine et cachemire',
-            'Bonnet arc-en-ciel'
+            ['Bonnet en laine', 10, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.'],
+            ['Bonnet en laine bio', 14, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.'],
+            ['Bonnet en laine et cachemire', 20, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.'],
+            ['Bonnet arc-en-ciel', 12, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.']
         ]
     ?>
     <table>
-        <tr>
-            <?php
+         <?php
             foreach($myArray as $element) {
-            ?>
+        ?>
+        <tr>
             <td>
-                <?= $element; ?>
+                <?= $element[0]; ?>
             </td>
-            <?php
-            }
-            ?>
+            <td>
+                <?= $element[1]; ?>$
+            </td>
+            <td>
+                <?= $element[2]; ?>
+            </td>
         </tr>
+        <?php
+        }
+        ?>
     </table>
 </body>
 </html>
@@ -34,12 +40,12 @@
 
 
 
-<!-- 1. Utilisation des tableaux
-Posons des données de base et un premier HTML :
-    Créer une page html (balise <html>, <body>) dans un fichier PHP (index.php par exemple)
-    y créer un tableau PHP contenant ces produits :
-        Bonnet en laine
-        Bonnet en laine bio
-        Bonnet en laine et cachemire
-        Bonnet arc-en-ciel
-    afficher ces produits dans le html en utilisant une boucle (foreach conseillé), dans une balise HTML <table> -->
+<!-- 2. Tableaux imbriqués
+    Nous voulons maintenant un peu plus d'informations sur nos produits. Commençons par un prix et une description.
+    Complexifions les données et transformons nos données en tableaux :
+        Bonnet en laine : 10€
+        Bonnet en laine bio : 14€
+        Bonnet en laine et cachemire : 20€
+        Bonnet arc-en-ciel : 12€
+    Tous les produits vont également avoir la même description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.
+    Mettre à jour l'affichage en conséquence -->
