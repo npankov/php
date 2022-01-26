@@ -23,15 +23,16 @@
             <td>
                 <?= $element[0]; ?>
             </td>
-            <td <?php if ($element[1] >= 12) {
+            <td>
+                Prix: 
+                <span <?php if ($element[1] >= 12) {
                 echo 'style="color:green;"';
             } else {
                 echo 'style="color:blue;"';
             }
                 ?>
-            >
-                Prix: 
-                <?= $element[1] ?>$
+                ><?= $element[1] ?>$
+                </span>
             </td>
             <td>
                 Description: <?= $element[2]; ?>
