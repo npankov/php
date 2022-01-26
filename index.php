@@ -24,6 +24,9 @@
                 <?= $element[0]; ?>
             </td>
             <td>
+                Prix HT: <?= $element[1] - $element[1] / 100 * 20; ?>
+            </td>
+            <td>
                 Prix: 
                 <span <?php if ($element[1] >= 12) {
                 echo 'style="color:green;"';
@@ -48,6 +51,7 @@
 
 
 
-<!-- 3. Conditions
-On va faire ressortir visuellement les prix de nos produits, et encore plus ceux qui ne sont pas cher !
-    Si un prix est inférieur ou égal à 12€, afficher le prix en vert, sinon l'afficher en bleu. -->
+<!-- 4. Fonctions
+    Une pensée pour les professionnels qui ont besoin de se couvrir ! Pour eux, il faudrait afficher les prix sans TVA.
+    Nos prix étaient ici TTC (incluaient la TVA), nous allons faire une fonction calculant le montant hors taxes d'un produit.
+    Afficher les prix HT dans la colonne avant celle des prix TTC -->
