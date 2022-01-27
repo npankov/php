@@ -15,16 +15,35 @@ include './includes/functions.php';
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
+    <div class="container">
         <a class="navbar-brand" href="index.php">Lucky Bonnet</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item ">
                     <a class="nav-link active" aria-current="page" href="list.php">List de bonnets</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="login.php">Login</a>
+                </li>
+
+                <?php
+                if (isset($_POST['email'])) {
+                    ?>
+                    <li>
+                        <a class="nav-link disabled" href="#"><?= $_POST['email']; ?></a>
+                    </li>
+                    <?php
+                } else {
+                    ?>
+                    <li>
+                        <a class="nav-link disabled" href="#">User non connecté</a>
+                    </li>
+                    <?php
+                }
+                ?>
             </ul>
         </div>
     </div>
