@@ -9,7 +9,7 @@
             $count++;
             ?>
 
-            <div class="card mx-2" style="width: 18rem;">
+            <div class="card mx-2 com" style="width: 18rem;">
               <img src="<?= $element[3]; ?>" class="card-img-top" alt="...">
               <div class="card-body d-flex justify-content-center flex-column">
                 <h5 class="card-title"><?= $element[0]; ?></h5>
