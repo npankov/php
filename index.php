@@ -1,30 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <table>
-         <?php
-         include 'variables.php';
-         include 'functions.php';
+<?php
+    include_once './includes/header.php';
+?>
 
-            foreach($myArray as $element) {
-                renderLine($element);
+<div class="row">
+    <?php
+        $count = 0;
+        foreach ($myArray as $element) {
+            $count++;
+            ?>
+
+            <div class="card mx-2" style="width: 18rem;">
+              <img src="<?= $element[3]; ?>" class="card-img-top" alt="...">
+              <div class="card-body d-flex justify-content-center flex-column">
+                <h5 class="card-title"><?= $element[0]; ?></h5>
+                <p class="card-text"><?= $element[2]; ?></p>
+                <a href="list.php" class="btn btn-primary">List de bonnets</a>
+              </div>
+            </div>
+
+            <?php
+            if ($count >= 3) {
+                break;
             }
-        ?>
-    </table>
-</body>
-</html>
+        }
+    ?>
+</div>
 
-
-<!-- 6. Séparation des fichiers
-    Nous allons maintenant séparer notre code en plusieurs éléments, à thème. L'idée est ici d'avoir des fichiers plus spécialisés et rapides à retrouver.
-    Séparer le code en plusieurs fichiers php :
-        Un pour les variables
-        Un autre pour les fonctions
-        Un pour le HTML
-    Appeler ces fichiers dans le HTML (utiliser include pour appeler les différents fichiers (opens new window) où vous le souhaitez) -->
+<?php
+    include_once './includes/footer.php';
+?>
