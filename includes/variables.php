@@ -1,4 +1,5 @@
 <?php
+
 $myArray = [
     ['Bonnet en laine',
         10,
