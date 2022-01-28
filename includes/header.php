@@ -2,9 +2,6 @@
 session_start();
 include './includes/variables.php';
 include './includes/functions.php';
-if (isset($_POST['email'])) {
-    $_SESSION['email'] = $_POST['email'];
-}
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +35,9 @@ if (isset($_POST['email'])) {
                     <?php
                     if (isset($_SESSION['email'])) {
                         ?>
-                        <a class="nav-link disabled" href="#"><?= $_SESSION['email']; ?></a>
+                        <a class="nav-link" href="logout.php">
+                            <?= $_SESSION['email']; ?> (Déconnexion)
+                        </a>
                         <?php
                     } else {
                         ?>
