@@ -1,8 +1,11 @@
 <?php
+if (isset($_POST['email'])) {
+    $_SESSION['email'] = $_POST['email'];
+}
 include_once './includes/header.php';
 ?>
 
-<form class="bg-light p-5" method="POST">
+<form class="bg-light p-5" method="post">
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -14,12 +17,6 @@ include_once './includes/header.php';
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<?php
-    if (isset($_POST['email'])) {
-        $_SESSION['email'] = $_POST['email'];
-    }
-?>
 
 <?php
 include_once './includes/footer.php';
