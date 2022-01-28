@@ -1,4 +1,5 @@
 <?php
+session_start();
 include './includes/variables.php';
 include './includes/functions.php';
 ?>
@@ -30,10 +31,10 @@ include './includes/functions.php';
                 </li>
 
                 <?php
-                if (isset($_POST['email'])) {
+                if (isset($_SESSION['email'])) {
                     ?>
                     <li>
-                        <a class="nav-link disabled" href="#"><?= $_POST['email']; ?></a>
+                        <a class="nav-link disabled" href="#"><?= $_SESSION['email']; ?></a>
                     </li>
                     <?php
                 } else {

@@ -15,6 +15,11 @@ include_once './includes/header.php';
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+<?php
+    if (isset($_POST['email'])) {
+        $_SESSION['email'] = $_POST['email'];
+    }
+?>
 
 <?php
 include_once './includes/footer.php';
