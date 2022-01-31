@@ -1,7 +1,7 @@
 <div class="row">
     <?php
     $count = 0;
-    foreach ($myArray as $element) {
+    foreach ($products as $element) {
         $count++;
         ?>
 
@@ -10,7 +10,7 @@
             <div class="card-body d-flex justify-content-center flex-column">
                 <h5 class="card-title" style="font-size: 1.2rem"><?= $element[0]; ?></h5>
                 <p class="card-text"><?= $element[2]; ?></p>
-                <a href="index.php?page=list" class="btn btn-primary">List de bonnets</a>
+                <a href="index.php?page=list" class="btn btn-primary">Liste de bonnets</a>
             </div>
         </div>
 

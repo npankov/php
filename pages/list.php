@@ -6,10 +6,11 @@
                 <th>Prix HT</th>
                 <th>Prix TTC</th>
                 <th>Description</th>
+                <th></th>
             </tr>
             <?php
-            foreach($myArray as $element) {
-                renderLine($element);
+            foreach($products as $id => $element) {
+                renderLine($element, $id);
             }
             ?>
         </table>
