@@ -1,6 +1,4 @@
 <?php
-include_once './includes/header.php';
-
 $loginErrors = [];
 $defaultPassword = 'toto';
 ?>
@@ -18,7 +16,7 @@ $defaultPassword = 'toto';
 
         if (empty($loginErrors)) {
             $_SESSION['email'] = $_POST['email'];
-            header('Location: index.php');
+            header('Location: index.php?page=home&loginSuccess=1');
             ?>
             <div class="alert alert-success" role="alert">
                 Vous etes connecté!
@@ -49,8 +47,3 @@ $defaultPassword = 'toto';
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-
-
-<?php
-include_once './includes/footer.php';
-?>
