@@ -13,6 +13,7 @@ include 'includes/functions.php';
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <body>
 
@@ -31,6 +32,12 @@ include 'includes/functions.php';
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link bi bi-basket3" aria-current="page" href="?page=cart"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bi bi-envelope" aria-current="page" href="?page=contact"></a>
+                </li>
+                <li class="nav-item">
                     <?php
                     if (isset($_SESSION['email'])) {
                         ?>
@@ -40,7 +47,8 @@ include 'includes/functions.php';
                         <?php
                     } else {
                         ?>
-                        <a class="nav-link" aria-current="page" href="?page=login">Connexion</a>
+<!--                        <i class="bi bi-person"></i>-->
+                        <a class="nav-link bi bi-person" aria-current="page" href="?page=login">Connexion</a>
                         <?php
                     }
                     ?>
