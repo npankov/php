@@ -1,31 +1,51 @@
 <?php
-function renderLine($element, $id)
+function findProduct($products, $id)
+{
+    foreach ($products as $product) {
+        if ($product->getId() == $id) {
+            return $product;
+        }
+    }
+    return null;
+}
+
+function priceHT($price)
+{
+    return $price - $price / 100 * 20;
+}
+
+?>
+
+<?php
+function renderLine($product)
 {
     ?>
     <tr>
         <td>
-            <?= $element[0]; ?>
+            <?= $product->getName(); ?>
         </td>
         <td>
-            <?= $element[1] - $element[1] / 100 * 20; ?>$
+            <?= priceHT($product->getPrice()) ?>$
         </td>
         <td>
-            <span <?php if ($element[1] >= 12) {
+            <span <?php if ($product->getPrice() >= 12) {
                 echo 'style="color:green;"';
             } else {
                 echo 'style="color:blue;"';
             }
             ?>
             >
-            <?= $element[1] ?>$
+            <?= $product->getPrice() ?>$
             </span>
         </td>
         <td>
-            <?= $element[2]; ?>
+            <?= $product->getDescription(); ?>
         </td>
         <td>
-            <a href="?page=cart&id=<?= $id ?>&action=add" class="btn btn-danger">Ajouter au panier</a>
+            <a href="?page=cart&id=<?= $product->getId() ?>&action=add" class="btn btn-danger">Ajouter au panier</a>
         </td>
     </tr>
     <?php
 }
+
+?>
