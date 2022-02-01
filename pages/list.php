@@ -9,7 +9,7 @@
                 <th></th>
             </tr>
             <?php
-            foreach($products as $id => $element) {
+            foreach ($products as $id => $element) {
                 renderLine($element, $id);
             }
             ?>

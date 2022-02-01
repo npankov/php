@@ -11,7 +11,7 @@ if (isset($_GET['action'])) {
 
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
-        $product = $products[$id];
+        $product = findProduct($products, $id);
     }
 
     if ($action === 'add' && !empty($product)) {
@@ -46,20 +46,20 @@ if (isset($_GET['action'])) {
     <?php
     $total = 0;
     foreach ($_SESSION['cart'] as $id => $quantity) {
-        $product = $products[$id];
-        $price = $product[1] * $quantity;
+        $product = findProduct($products, $id);
+        $price = $product->getPrice() * $quantity;
         $total += $price;
         ?>
 
         <tr>
-            <td> <?= $product[0] ?> </td>
-            <td> <?= $product[1] ?> $</td>
+            <td> <?= $product->getName() ?> </td>
+            <td> <?= $product->getPrice() ?> $</td>
             <td>
-                <a href="?page=cart&action=del&id=<?= $id ?>">-</a>
+                <a href="?page=cart&action=del&id=<?= $product->getId() ?>">-</a>
                 <?= $quantity ?>
-                <a href="?page=cart&action=add&id=<?= $id ?>">+</a>
+                <a href="?page=cart&action=add&id=<?= $product->getId() ?>">+</a>
             </td>
-            <td> <?= $product[1] * $quantity ?> $</td>
+            <td> <?= $product->getPrice() * $quantity ?> $</td>
         </tr>
 
         <?php
