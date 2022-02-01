@@ -1,5 +1,6 @@
 <?php
-function renderLine($element, $id) {
+function renderLine($element, $id)
+{
     ?>
     <tr>
         <td>
@@ -23,7 +24,7 @@ function renderLine($element, $id) {
             <?= $element[2]; ?>
         </td>
         <td>
-            <a href="index.php?page=cart&id=<?= $id ?>&action=add" class="btn btn-danger">Ajouter au panier</a>
+            <a href="?page=cart&id=<?= $id ?>&action=add" class="btn btn-danger">Ajouter au panier</a>
         </td>
     </tr>
     <?php

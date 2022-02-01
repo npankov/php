@@ -59,7 +59,7 @@ if (isset($_GET['action'])) {
                 <?= $quantity ?>
                 <a href="?page=cart&action=add&id=<?= $id ?>">+</a>
             </td>
-            <td> <?= $product[1] * $quantity ?> $ </td>
+            <td> <?= $product[1] * $quantity ?> $</td>
         </tr>
 
         <?php
@@ -68,7 +68,7 @@ if (isset($_GET['action'])) {
 
     <tr>
         <th colspan="3">Total à payer:</th>
-        <th> <?= $total ?> $ </th>
+        <th> <?= $total ?> $</th>
     </tr>
     <tr>
         <th colspan="4">

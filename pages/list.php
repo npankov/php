@@ -16,6 +16,6 @@
         </table>
     </div>
     <div class="col">
-        <a href="index.php?page=home" class="btn btn-primary">Bonnets preferé</a>
+        <a href="?page=home" class="btn btn-primary">Bonnets preferé</a>
     </div>
 </div>

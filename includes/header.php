@@ -18,7 +18,7 @@ include 'includes/functions.php';
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="index.php?page=home">Lucky Bonnet</a>
+        <a class="navbar-brand" href="?page=home">Lucky Bonnet</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,22 +26,21 @@ include 'includes/functions.php';
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a class="nav-link active" aria-current="page" href="index.php?page=list">Liste de bonnets</a>
+                    <a class="nav-link active" aria-current="page" href="?page=list">Liste de bonnets</a>
                 </li>
-
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <?php
                     if (isset($_SESSION['email'])) {
                         ?>
-                        <a class="nav-link" href="index.php?page=logout">
+                        <a class="nav-link" href="?page=logout">
                             <?= $_SESSION['email']; ?> (Déconnexion)
                         </a>
                         <?php
                     } else {
                         ?>
-                        <a class="nav-link" aria-current="page" href="index.php?page=login">Connexion</a>
+                        <a class="nav-link" aria-current="page" href="?page=login">Connexion</a>
                         <?php
                     }
                     ?>
