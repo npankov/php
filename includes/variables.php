@@ -3,9 +3,9 @@ require 'classes/Beanie.php';
 
 $products = [
     new Beanie(1, 'Bonnet en laine', 10, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.', './includes/img/1.jpg', ['S', 'M'], ['Laine']),
-    new Beanie(2, 'Bonnet en laine bio', 14, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.', './includes/img/2.jpg', ['XS', 'M'], ['Laine']),
-    new Beanie(3, 'Bonnet en laine et cachemire', 20, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.', './includes/img/3.jpg', ['S', 'L'], ['Laine']),
-    new Beanie(4, 'Bonnet arc-en-ciel', 12, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.', './includes/img/4.jpg', ['L', 'XXL'], ['Laine'])
+    new Beanie(2, 'Bonnet en laine bio', 14, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.', './includes/img/2.jpg', ['XL', 'M'], ['Laine, Laine bio']),
+    new Beanie(3, 'Bonnet en laine et cachemire', 20, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.', './includes/img/3.jpg', ['S', 'L'], ['Laine et cachemire']),
+    new Beanie(4, 'Bonnet arc-en-ciel', 12, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.', './includes/img/4.jpg', ['L', 'XXL'], ['Arc-en-ciel'])
 ];
 
 //$products = [

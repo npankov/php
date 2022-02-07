@@ -25,6 +25,12 @@ function renderLine($product)
             <?= $product->getName(); ?>
         </td>
         <td>
+            <?php foreach ($product->getSizes() as $size) {
+            ?>
+                <span><?= $size; ?></span>
+                <?php }; ?>
+        </td>
+        <td>
             <?= priceHT($product->getPrice()) ?>$
         </td>
         <td>
