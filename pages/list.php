@@ -1,14 +1,16 @@
 <?php
-    $size = filter_input(INPUT_POST, 'size');
-//    var_dump($size);
+$size = filter_input(INPUT_POST, 'size');
+$material = filter_input(INPUT_POST, 'material');
 
-    $searchedProducts = array_filter($products, function (Beanie $beanie) use ($size) {
-        return in_array($size, $beanie->getSizes());
-    });
+$searchedProductsBySize = array_filter($products, function (Beanie $beanie) use ($size) {
+    return in_array($size, $beanie->getSizes());
+});
 
-//    var_dump($products);
+$searchedProductsByMaterial = array_filter($products, function (Beanie $beanie) use ($material) {
+    return in_array($material, $beanie->getMaterials());
+});
+
 ?>
-
 
 <div>
     <div class="row">
@@ -25,7 +27,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="inputState">Matière </label>
-                <select id="inputState" class="form-control">
+                <select name="material" id="inputState" class="form-control">
                     <option selected>...</option>
                     <option>Laine</option>
                     <option>Laine bio</option>
@@ -51,13 +53,13 @@
                     <th></th>
                 </tr>
                 <?php
-
-                foreach ($products as $element) {
-                    if (in_array($size, $element->getSizes())) {
-                        renderLine($element);
-                    }
-                    if ($size == null || $size == '...') {
-                        renderLine($element);
+                if ($searchedProductsBySize == null && $searchedProductsByMaterial == null) {
+                    renderGoodsArray($products);
+                } else {
+                    if ($searchedProductsBySize) {
+                        renderGoodsArray($searchedProductsBySize);
+                    } elseif ($searchedProductsByMaterial) {
+                        renderGoodsArray($searchedProductsByMaterial);
                     }
                 }
                 ?>

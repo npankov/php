@@ -14,9 +14,12 @@ function priceHT($price)
     return $price - $price / 100 * 20;
 }
 
-?>
+function renderGoodsArray($arr) {
+    foreach ($arr as $element) {
+        renderLine($element);
+    }
+}
 
-<?php
 function renderLine($product)
 {
     ?>
